@@ -1,0 +1,189 @@
+* {
+    font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.window {
+    background-color: #00000099;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window.login {
+    display: none;
+}
+
+.window.register {
+    display: none;
+}
+
+.window form {
+    background-color: #FFFFFF99;
+    width: 60%;
+    min-height: 50vh;
+    box-shadow: 3px 3px 10px #00000099;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form div {
+    flex-basis: 100%;
+    margin: 10px;
+}
+
+form .form__row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+form .form__row:last-child {
+    align-self: flex-end;
+}
+
+form .form__row label {
+    flex: 0 0 200px;
+    text-align: end;
+}
+
+form .form__row input {
+    flex: 1 1;
+    margin: 0 10px;
+}
+
+form .form__row button {
+    font-size: 1em;
+    color: #00000099;
+    border: none;
+    background-color: #CC543A60;
+    box-shadow: 3px 3px 5px #00000080;
+    text-shadow: 0px 0px 3px #FFFFFF;
+}
+
+form .form__title {
+    margin-top: 30px;
+    justify-content: center;
+    font-size: 3em;
+    color: #CC543A;
+    text-shadow: 0px 0px 5px #FFFFFF80;
+}
+
+.logout{
+    width:100%;
+    position: fixed;
+    align-self: flex-start;
+    
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout a{
+    margin: 10px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #00000099;
+    transition: all 0.2s;
+}
+
+.logout a:hover{
+    cursor: pointer;
+    color: #CC543A;
+}
+
+.bg {
+    width: 100%;
+    height: 80%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bg:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url("/images/bg.jpg") center center;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.bg * {
+    flex-basis: 100%;
+}
+
+.bg .title {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    font-size: 5em;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 5px #00000080;
+}
+
+.bg .description {
+    display: flex;
+    justify-content: center;
+
+    color: #FFFFFF;
+}
+
+.bg .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.btn {
+    padding: 15px;
+    margin: 20px 10px;
+    font-size: 1.2em;
+
+    flex: 0 1 200px;
+
+    transition: all 0.2s;
+    background: none;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: #FFFFFF99;
+    border: 1px solid #CC543A;
+    color: #CC543A;
+    box-shadow: 3px 3px 5px #00000080;
+    text-shadow: 0px 0px 3px #FFFFFF;
+}
+
+#profileBtn {
+    display: flex;
+    padding: 0;
+}
+
+.btn a {
+    padding: 15px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.btn a:hover{
+    color: #CC543A;
+}

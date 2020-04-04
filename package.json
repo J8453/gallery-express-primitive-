@@ -1,0 +1,28 @@
+{
+  "name": "002",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.0",
+    "formdata": "^0.10.4",
+    "fs": "0.0.1-security",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2",
+    "mysql2": "^2.1.0",
+    "react-dom": "^16.12.0",
+    "sequelize": "^5.21.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

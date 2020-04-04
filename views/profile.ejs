@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= queryUser %>'s</title>
+    <link rel='stylesheet' href='/stylesheets/profile.css' />
+  </head>
+  <body>
+    <div class="container">
+        <div class="window login">
+            <form action="/login/fromProfile?user=<%= queryUser %>" method="post" id="login">
+                <div class="form__row form__title">
+                    login
+                </div>
+                <div class="form__row">
+                    <label for="id">ID</label>
+                    <input type="text" name="ID">
+                </div>
+                <div class="form__row">
+                    <label for="password">password</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="form__row">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="window register">
+            <form action="/register/fromProfile?user=<%= queryUser %>" method="post" id="register">
+                <div class="form__row form__title">
+                    register
+                </div>
+                <div class="form__row">
+                    <label for="id">ID</label>
+                    <input type="text" name="ID">
+                </div>
+                <div class="form__row">
+                    <label for="password">password</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="form__row">
+                    <label for="password">password confirm</label>
+                    <input type="password" name="confirm">
+                </div>
+                <div class="form__row">
+                    <button type="submit" class="btn">Create Account</button>
+                </div>
+            </form>
+        </div>
+        <div class="side">
+            <div class="side__nav">
+                <ul>
+                    <li class="logo"><a href="/">G</a></li>
+                    <% if (!uidFromSession) { %>
+                        <li><a href="/" id="loginBtn">Login</a></li>
+                        <li><a href="/" id="registerBtn">Register</a></li>
+                    <% } else { %>
+                        <li><a href="/profile?user=<%= uidFromSession %>">My Gallery</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="side__portrait" data-userID="<%= idInUser %>" data-albumID="">
+                <div class="side__portrait--avatarContainer" style="background-color: #CC543A80">
+                    <img class="side__portrait--avatar" src="/uploads/<%= queryUser %>/avatar.jpg" alt="<% if (uidFromSession && uidFromSession === queryUser) { %> please upload your avatar <% } else { %> Not uploaded yet <% } %>">
+                    <% if (uidFromSession && uidFromSession === queryUser) { %>
+                        <div class="side__portrait--avatar mask">Update Avatar</div>
+                    <% } %>
+                </div>
+                <h1 class="side__portrait--userID"><%= queryUser %></h1>
+                <p class="side__portrait--description">click the album you like.</p>
+            </div>
+            <!-- <% if (uidFromSession && uidFromSession === queryUser) { %>
+                <div class="buttons">
+                    <button class="btn" id="functionalBtn">make an album</button>
+                </div>
+            <% } %> -->
+            
+                <div class="buttons">
+                    <button class="btn" id="functionalBtn">make an album</button>
+                </div>
+            
+        </div>
+        <div class="content">
+            <% if (albumNum) {
+                for (let i=0; i < albumNum; i++) { %>
+                    <div class="content__album">
+                        <div class="content__album--name mask"><%= albumArr[i].name %></div>
+                        <img class="content__album--cover" data-albumID="<%= albumArr[i].id %>" src="<%= albumArr[i].coverSrc %>" alt="">
+                        <div class="content__album--description" style="display: none"><%= albumArr[i].description %></div>
+                    </div>
+                <% }
+            } %>
+        </div>
+        <div class="content dynamic">
+            
+        </div>
+    </div>
+    
+   <script type="text/javascript" src="/javascripts/profile.js"></script>
+  </body>
+</html>

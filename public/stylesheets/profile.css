@@ -1,0 +1,339 @@
+* {
+    font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+
+    /*border: 1px solid #00000080;*/
+}
+
+/* register window & login window */
+.window {
+    background-color: #00000099;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window.login {
+    display: none;
+}
+
+.window.register {
+    display: none;
+}
+
+.window form {
+    background-color: #FFFFFF99;
+    flex: 0 1 500px;
+    min-height: 50vh;
+    box-shadow: 3px 3px 10px #00000099;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form div {
+    flex-basis: 100%;
+    margin: 10px;
+}
+
+form .form__row {
+    display: flex;
+    justify-content: center;
+}
+
+form .form__row:last-child {
+    align-self: flex-end;
+}
+
+form .form__row label {
+    flex: 0 0 200px;
+    text-align: end;
+}
+
+form .form__row textarea,
+form .form__row input {
+    flex: 1 1 0px;
+    margin: 0 10px;
+}
+
+form .form__row input[type="file"] {
+    width: 0px;
+    /*幹為什麼它設成0就ok了我不知道 啊我也不知道我怎麼知道要設成0*/
+}
+
+form .form__row button {
+    font-size: 1em;
+    color: #00000099;
+    border: none;
+    background-color: #CC543A60;
+    box-shadow: 3px 3px 5px #00000080;
+    text-shadow: 0px 0px 3px #FFFFFF;
+}
+
+form .form__row button:hover {
+    color: #CC543A;
+    background-color: #FFFFFF99;
+    border: 1px solid #CC543A;
+}
+
+form .form__title {
+    margin-top: 30px;
+    justify-content: center;
+    font-size: 3em;
+    color: #CC543A;
+    text-shadow: 0px 0px 5px #FFFFFF80;
+}
+/* register window & login window ---end */
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container>* {
+    height: 100vh;
+}
+
+.side {
+    background-color: #00000099;
+    color: #FFFFFF;
+    flex: 1 0 280px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.content {
+    flex: 5 1 500px;
+}
+
+.side>* {
+    flex: 0 0 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.side .side__nav {
+    height: 50px;
+    background-color: #FFFFFF99;
+}
+
+.side .side__nav ul {
+    padding: 0;
+    flex: 1;
+
+    display: flex;
+}
+
+.side .side__nav ul li {
+    list-style: none;
+    flex: 1 1 100px;
+
+    display: flex;
+}
+
+.side .side__nav ul li a {
+    transition: all 0.2s;
+    text-decoration: none;
+    color: #FFFFFF;
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side .side__nav ul li.logo {
+    flex: 0 1 50px;
+    background-color: #CC543A;
+}
+
+.side .side__nav ul li a:hover {
+    cursor: pointer;
+    color: #CC543A;
+    border: 1px solid #CC543A;
+    text-shadow: 0px 0px 5px #FFFFFF99;
+    box-shadow: 0px 0px 5px #FFFFFF60;
+}
+
+.side .side__nav ul li.logo a:hover {
+    background-color: #FFFFFF;
+}
+
+.side__portrait {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.side__portrait>* {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.side__portrait>h1 {
+    flex-basis: 100%;
+    font-size: 1.5em;
+}
+
+.side__portrait--avatarContainer {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    position: relative;  /*mask的母元素*/
+}
+
+.side__portrait--avatarContainer >img{
+    max-height: 100%;
+}
+
+/*button*/
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.btn {
+    padding: 15px;
+    margin: 10px;
+    font-size: 1em;
+
+    flex: 0 1 200px;
+
+    transition: all 0.2s;
+    background: #CC543A60;
+    border: 1px solid #CC543A60;
+    color: #FFFFFF;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: #CC543A60;
+    border: 1px solid #FFFFFF;
+}
+
+
+/*content*/
+.content {
+    overflow: scroll;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.content__img,
+.content__album {
+    margin: 15px;
+    background-color: antiquewhite;
+    flex: 1 0 250px;
+
+    position: relative; /*mask的母元素*/
+}
+
+.content__img img,
+.content__album img {
+    max-width: 100%;
+}
+/*content end*/
+
+
+/*dy*/
+.dynamic {
+    background-color: #FFFFFF99;
+    position: absolute;
+    display: none;
+    transition: all 0.2s;
+}
+
+.dynamic>div {
+    flex-basis: 100%;
+}
+
+.dynamic>div:first-child {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/**/
+.dynamic .dynamicForm {
+    border: 1px solid #00000060;
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFFFFF99;
+    display: flex;
+    justify-content: center;
+}
+/**/
+
+span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #CC543A;
+}
+
+span:hover {
+    cursor: pointer;
+    color: #00000099;
+}
+
+
+/*mask*/
+.mask {
+    position: absolute;
+    background-color: #FFFFFF60;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: all 0.1s;
+
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.mask.side__portrait--avatar {
+    background-color: #CC543A99; 
+}
+
+.mask:hover {
+    cursor: pointer;
+    opacity: 1;
+    text-shadow: 1px 1px 3px #00000099;
+}
+
+
+/*updateAvatarPreview*/
+.form__updateAvatar--preview {
+    flex: 0 0 250px;
+    /*width: 250px;*/
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form__updateAvatar--preview >img{
+    max-height: 100%;
+}

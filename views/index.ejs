@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gallery.co</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+        <div class="window login">
+            <form action="/login" method="post" id="login">
+                <div class="form__row form__title">
+                    login
+                </div>
+                <div class="form__row">
+                    <label for="id">ID</label>
+                    <input type="text" name="ID">
+                </div>
+                <div class="form__row">
+                    <label for="password">password</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="form__row">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="window register">
+            <form action="/register" method="post" id="register">
+                <div class="form__row form__title">
+                    register
+                </div>
+                <div class="form__row">
+                    <label for="id">ID</label>
+                    <input type="text" name="ID">
+                </div>
+                <div class="form__row">
+                    <label for="password">password</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="form__row">
+                    <label for="password">password confirm</label>
+                    <input type="password" name="confirm">
+                </div>
+                <div class="form__row">
+                    <button type="submit" class="btn">Create Account</button>
+                </div>
+            </form>
+        </div>
+        <% if (uidFromSession) { %>
+        	<div class="logout"><a href="/logout">Logout</a></div>
+        <% } %>
+        <div class="bg">
+            <div class="title">Gallery.co</div>
+            <div class="description">Customize your own photo gallery.</div>
+            <div class="buttons">
+            	<% if (uidFromSession) { %>
+                	<button class="btn" id="profileBtn"><a href="/profile?user=<%= uidFromSession %>">My Profile</a></button>
+                <% } else { %>
+                	<button class="btn" id="loginBtn">Login</button>
+                	<button class="btn" id="registerBtn">Register</button>
+                <% } %>
+            </div>
+        </div>
+    </div>
+   <script type="text/javascript" src="/javascripts/index.js"></script>
+  </body>
+</html>
